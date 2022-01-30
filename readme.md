@@ -39,11 +39,13 @@ ADMIN_PASSWORD="password"
 ### Begin to surf
 
 Visit the site at https://127.0.0.1:8000
+
 Click the right button in toolbar to login with
 - username: admin
 - password: password
 
 As admin you can go to /admin (Dashboard) to manage the products with EasyAdmin
+
 You can also change language (english or french) with the dedicated icon
 
 ## Api products
