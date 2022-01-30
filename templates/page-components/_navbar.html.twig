@@ -1,0 +1,89 @@
+{% trans_default_domain 'navigation' %}
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ path('home') }}">Mini Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('home') }}">
+                    <i class="fa fa-home"></i>
+                        {{ 'navigation.menu.home'|trans }}
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('product_list') }}">
+                    {{ 'navigation.menu.product-list'|trans }}
+                    <span class="badge badge-danger">
+                        {{ render(controller(
+                            'App\\Controller\\ProductController::getProductsCount', {}
+                        )) }}
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <div class="btn-group mt-2 mr-1">
+            {% set cart = app.session.get(session_name) %}
+            <div class="btn-group dropleft" role="group">
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">
+                        <i class="fa fa-shopping-cart fa-2x"></i>
+                    </span>
+                </button>
+                <div class="dropdown-menu dropdown-cart">
+                    {% include 'page-components/_cart.html.twig' with {'cart': cart} %}
+                </div>
+            </div>
+            <button type="button" class="btn btn-success">
+                <i class="fa fa-shopping-cart"></i>
+                {% if cart is not null %}
+                    ({{ cart.productLines|length }})
+                {% endif %}
+            </button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-secondary btn-sm" type="button" title="{{ 'navigation.menu.change-langage'|trans }}">
+                <i class="fa fa-language"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">
+                    <i class="fa fa-language"></i>
+                </span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ path('change_locale', {'locale': 'fr_FR'})}}">Fr</a>
+                <a class="dropdown-item" href="{{ path('change_locale', {'locale': 'en_EN'})}}">En</a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('admin') }}" target="_blank">
+                        <i class="fa fa-gear"></i>
+                        {{ 'navigation.menu.dashboard'|trans }}
+                    </a>
+                </li>
+            {% endif %}
+            <li class="nav-item active ml-2 mt-1">
+                {% if app.user is null%}
+                    <a class="nav-link" href="{{ path('app_login') }}",
+                       title="{{ 'security.login.title'|trans({}, 'security') }}">
+                        <i class="fa fa-sign-in"></i>
+                    </a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('app_logout') }}"
+                       title="{{ 'security.logout.title'|trans({}, 'security') }}">
+                        <i class="fa fa-sign-out"></i>
+                    </a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+
+

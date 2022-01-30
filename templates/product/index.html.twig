@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'product' %}
+{% block title %}
+    {{ parent() }} - {{ 'product.list.title'|trans }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container mb-4 mt-4 pb-5">
+        <h1 class="mt-1 mb-1">{{ 'product.list.title'|trans }}</h1>
+        <div class="row">
+            {% if products|length %}
+                {% for product in products %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-4">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <h3 class="text-warning product-title">{{ product.name }}</h3>
+                            <a href="#">
+                                <img class="card-img-top"
+                                     src="{{ asset('build/images/' ~ product.image) }}" alt="">
+                            </a>
+                            <h4 class="mt-2">{{ product.price|round(2) }} €</h4>
+                            <a class="btn btn-dark my-2" href="{{ path('cart_add_product', {'slug': product.slug}) }}" role="button">
+                                {{ 'product.button.add-to-cart'|trans }}
+                            </a>
+                            <a class="btn btn-primary my-2" href="{{ path('product_show', {'slug': product.slug }) }}" role="button">
+                                {{ 'product.button.show'|trans }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                {{ 'product.list.empty'|trans }}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

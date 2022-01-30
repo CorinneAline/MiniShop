@@ -1,0 +1,8 @@
+navigation:
+  menu:
+    home: Home
+    product-list: Product list
+    dashboard: Dashboard
+    go-to-cart: Go to cart
+    go-to-home: Go back home
+    change-langage: Change language

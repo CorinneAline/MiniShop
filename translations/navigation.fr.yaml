@@ -1,0 +1,8 @@
+navigation:
+  menu:
+    home: Accueil
+    product-list: Liste des produits
+    dashboard: Administration
+    go-to-cart: Afficher le panier
+    go-to-home: Revenir à l'accueil
+    change-langage: Changer la langue du site

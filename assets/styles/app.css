@@ -1,3 +1,88 @@
-body {
-    background-color: lightgray;
+/* Home */
+header {
+    top: 0;
+}
+#intro {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.intro-text {
+    margin-top: 100px;
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+    #intro {
+        margin-top: -58.59px;
+    }
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Cart */
+.cart {
+    margin-bottom: 100px !important;
+}
+
+/* Navbar dropdown cart */
+.dropdown-cart{
+    min-width:300px !important;
+}
+.dropdown-cart .item{
+    display:block;
+    padding:3px;
+    margin: 3px 0;
+    line-height: 25px;
+}
+.dropdown-cart .item:hover{
+    background-color:#f3f3f3;
+}
+.dropdown-cart .item:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.dropdown-cart .item-left{
+    float:left;
+}
+
+.dropdown-cart .item-left span.item-info{
+    float:left;
+}
+.dropdown-cart .item-left span.item-info{
+    margin-left:10px;
+}
+.dropdown-cart .item-left span.item-info span{
+    display:block;
+}
+.dropdown-cart .item-right{
+    float:right;
+}
+.dropdown-cart .item-right button{
+    margin-top:20px;
+}
+
+/* Product details */
+.product-title, .price, .sizes, .colors {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.product-title, .rating, .product-description, .price, .vote, .sizes {
+    margin-bottom: 15px;
+}
+.product-title {
+    margin-top: 0;
 }

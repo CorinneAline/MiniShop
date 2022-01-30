@@ -1,0 +1,39 @@
+{% trans_default_domain 'cart' %}
+{% if cart|length > 0 %}
+    {% for productLine in cart.productLines %}
+        <p class="item">
+        <span class="item-left">
+            <span class="item-info">
+                <span>{{ productLine.name }}</span>
+                <span>{{ 'cart.quantity.title'|trans }} : {{ productLine.quantity }}</span>
+            </span>
+        </span>
+            <span class="item-right">
+            <span>{{ productLine.price|number_format(2) }} €</span>
+            <button class="btn btn-sm btn-danger pull-right">
+                <i class="fa fa-trash fa-sm"></i>
+            </button>
+        </span>
+        </p>
+        {% if not loop.last %}<hr>{% endif %}
+    {% endfor %}
+    <p class="item mt-1 border-top border-secondary">
+        <span class="item-left">
+            <span class="item-info">
+                <span class="text-bold">{{ 'cart.total.title'|trans }}</span>
+            </span>
+        </span>
+        <span class="item-right">
+            <span class="item-info">
+                <span class="text-bold">{{ cart.total|number_format(2) }} €</span>
+            </span>
+        </span>
+    </p>
+    <p class="text-center mt-2">
+        <a class="btn btn-success text-center" href="{{ path('cart_display') }}">
+            {{ 'cart.action.go-to-cart'|trans }}
+        </a>
+    </p>
+{% else %}
+    <p class="ml-2">Empty cart</p>
+{% endif %}

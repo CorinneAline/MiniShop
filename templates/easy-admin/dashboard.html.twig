@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - {{ ea.dashboardTitle }}
+{% endblock %}
+
+{% block body %}
+    <div class="container mb-3 mt-3">
+        <h1>{{ 'navigation.menu.dashboard'|trans({}, 'navigation') }}</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-counter primary">
+                    <i class="fa fa-code-fork"></i>
+                    <span class="count-numbers">{{ render(controller(
+                            'App\\Controller\\ProductController::getProductsCount', {}
+                        )) }}</span>
+                    <span class="count-name">{{ 'product.title'|trans({}, 'product') }}</span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-counter info">
+                    {% if ea is defined %}
+                        {% for menuItem in ea.mainMenu.items %}
+                            <a class="nav-link" href="{{ menuItem.linkUrl }}"> {{ menuItem.label }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

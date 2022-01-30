@@ -1,0 +1,15 @@
+product:
+  title: Products
+  description: Description
+  list:
+    title: Products list
+    empty: No products to show
+  show:
+    title: Product details
+  button:
+    add-to-cart: Add to cart
+    back-to-list: Back to list
+    show: Show product
+    crud: Manage products
+  label:
+    quantity: Quantity

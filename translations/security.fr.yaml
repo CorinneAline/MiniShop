@@ -1,0 +1,7 @@
+security:
+  login:
+    title: Se connecter
+    remember-me: Se rappeller de moi
+    submit: Envoyer
+  logout:
+    title: Se déconnecter

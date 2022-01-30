@@ -1,0 +1,24 @@
+cart:
+  title: Shopping Cart
+  add:
+    success: Successfully added product to cart
+  action:
+    go-to-cart: Go to cart
+    continue-shopping: Continue shopping
+    remove: Remove
+    refresh: Update
+    change-quantity: Change quantity
+    checkout: Checkout
+  quantity:
+    title: Quantity
+  total:
+    title: Total
+  error:
+    quantity-out-of-bound: Quantity out of bound
+  checkout: Application purpose stopped here. Thankes for using the app !
+  refresh:
+    success: Shopping cart has been sucessfully refreshed
+    error: Error while refreshing shopping cart
+  remove:
+    success: Product has been sucessfully removed from the shopping cart
+    error: Error while removing product from the shopping cart

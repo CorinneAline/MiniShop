@@ -4,6 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    session_name: 'mini_shop_cart'
 
 services:
     # default configuration for services in *this* file
@@ -20,5 +21,17 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Controller\CartController:
+        arguments:
+            $sessionName: '%session_name%'
+
+    App\EventSubscriber\LocaleSubscriber:
+        arguments: ['%kernel.default_locale%']
+
+    App\EventListener\AppLogoutListener:
+        tags:
+            - name: 'kernel.event_listener'
+              event: 'Symfony\Component\Security\Http\Event\LogoutEvent'
+              dispatcher: security.event_dispatcher.main
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

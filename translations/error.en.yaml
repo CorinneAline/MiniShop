@@ -1,0 +1,4 @@
+error:
+  403: Non authorized
+  500: Server error
+  generic: Error

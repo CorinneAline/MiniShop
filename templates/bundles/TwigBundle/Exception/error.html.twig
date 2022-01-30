@@ -1,0 +1,36 @@
+{#
+    This template is used to render any error different from 403, 404 and 500.
+
+    This is the simplest way to customize error pages in Symfony applications.
+    In case you need it, you can also hook into the internal exception handling
+    made by Symfony. This allows you to perform advanced tasks and even recover
+    your application from some errors.
+    See http://symfony.com/doc/current/cookbook/controller/error_pages.html
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <div class="text-cover-wrapper">
+                        <h1 class="text-cover-title c-white">{{ 'error.generic'|trans }} {{ status_code }}</h1>
+                        <h3 class="text-cover-subtitle c-white strong-400">{{ status_text }}</h3>
+                        <div class="clearfix"></div>
+                        {% if exception.message %}
+                            <p class="c-white mt-5">
+                                {{ exception.message }}
+                            </p>
+                        {% endif %}
+
+                        <div class="text-center mt-5">
+                            <a href="{{ path('product_list') }}" class="btn btn-styled btn-base-5 btn-outline btn-circle">{{ 'navigation.go-to-home'|trans({}, 'navigation') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

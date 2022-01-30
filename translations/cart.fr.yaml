@@ -1,0 +1,24 @@
+cart:
+  title: Panier
+  add:
+    success: Produit ajouté avec succès au panier
+  action:
+    go-to-cart: Afficher le panier
+    continue-shopping: Continuer les achats
+    remove: Supprimer
+    refresh: Mettre à jour
+    change-quantity: Quantité changée
+    checkout: Passer la commande
+  quantity:
+    title: Quantité
+  total:
+    title: Total
+  error:
+    quantity-out-of-bound: Quantité excessive
+  checkout: Le périmètre de l'application s'arrête ici. Merci de l'avoir utilisée !
+  refresh:
+    success: Le panier a bien été mis à jour
+    error: Erreur durant la mise à jour du panier
+  remove:
+    success: Le produit a bien été supprimé du panier
+    error: Erreur durant la suppression du produit

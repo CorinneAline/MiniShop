@@ -1,0 +1,7 @@
+security:
+  login:
+    title: Login
+    remember-me: Remember me
+    submit: Send
+  logout:
+    title: Logout

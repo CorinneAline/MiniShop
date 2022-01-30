@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - {{ 'main.title'|trans({}, 'main') }}
+{% endblock %}
+
+{% block body %}
+<header>
+    <div id="intro" style="background-image: url({{ asset('build/images/home.jpg') }});">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100 pb-2">
+                <div class="intro-text text-white">
+                    <h1 class="mb-3">Mini Shop</h1>
+                    <a class="btn btn-outline-light btn-lg m-2" href="{{ path('product_list') }}" role="button"
+                       rel="nofollow">{{ 'main.button'|trans({}, 'main') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}

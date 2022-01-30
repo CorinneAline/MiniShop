@@ -1,0 +1,15 @@
+product:
+  title: Produits
+  description: Description
+  list:
+    title: Liste des produits
+    empty: Aucun produit enregistré
+  show:
+    title: Détails du produit
+  button:
+    add-to-cart: Ajouter au panier
+    back-to-list: Retour à la liste
+    show: Voir le produit
+    crud: Gérer les produits
+  label:
+    quantity: Quantité
