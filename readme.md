@@ -11,7 +11,7 @@ https://symfony.com/doc/current/setup.html#technical-requirements
 ### Create a directory for this project or use an existent one
 ```cd my_projects```
 ### Clone the project
-```git clone https://github.com/Antoine87/symfony-ecommerce.git```
+```git clone https://github.com/CorinneAline/MiniShop.git```
 ### Make composer install the project's dependencies into vendor
 ```composer install```
 ### Create a .env.local at the root of the project with :
