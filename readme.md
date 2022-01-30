@@ -1,6 +1,6 @@
 # Mini Shop
 ## eCommerce application with Symfony 5
-###Requirements
+### Requirements
 PHP 8.1.0 or higher;
 PDO-SQLite PHP extension enabled;
 and the usual Symfony application requirements.
@@ -26,7 +26,6 @@ DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 USER_PASSWORD="user"
 ADMIN_PASSWORD="password"
 ```
-
 ### Create database
 ```php bin/console doctrine:create:database```
 ### Migrate database
@@ -76,7 +75,7 @@ The file is store in your_project/var/export, filename 'export-products.csv'
 #### Run all tests
 ```php ./vendor/bin/phpunit```
 
-##Credits
+## Credits
 - Symfony: https://symfony.com/
 - Bootstrap4: https://getbootstrap.com/docs/4.0/getting-started/introduction/
 - Webpack: https://webpack.js.org/
