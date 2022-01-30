@@ -1,4 +1,4 @@
-##Credits
+## Credits
 - Symfony: https://symfony.com/
 - Bootstrap4: https://getbootstrap.com/docs/4.0/getting-started/introduction/
 - Webpack: https://webpack.js.org/
