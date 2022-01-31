@@ -33,7 +33,7 @@ ADMIN_PASSWORD="password"
 ### Load fixtures
 ```php bin/console doctrine:fixtures:load```
 ### Generate client assets with Yarn (dev environment)
-```yarn run dev```
+```yarn encore dev```
 ### Start the server
 ```symfony server:start```
 ### Begin to surf
