@@ -1,8 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
 
-// Fix get the absolute path for the current working directory using `__dirname` and concatenate it with ./assets/controllers.json
-const { join } = require('path');
-
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
