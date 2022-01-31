@@ -111,7 +111,7 @@ class CartController extends AbstractController
     }
 
     #[Route('/remove/{slug}', name: 'remove_line')]
-    public function removeProductLine(Product $product, TranslatorInterface $translator): RedirectResponse
+    public function removeProductLine(Product $product, Request $request, TranslatorInterface $translator): RedirectResponse
     {
         $cart = $this->getSessionCart();
         if(!$cart instanceof Cart) {
@@ -124,7 +124,9 @@ class CartController extends AbstractController
         $this->updateSession($cart);
 
         $this->addFlash('success', $translator->trans('cart.remove.success', [], 'cart'));
-        return $this->redirectToRoute('cart_display');
+
+        $referer = $request->headers->get('referer');
+        return $this->redirect($referer);
     }
 
     #[Route('/checkout', name: 'checkout')]

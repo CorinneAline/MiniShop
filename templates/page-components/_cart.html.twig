@@ -1,5 +1,5 @@
 {% trans_default_domain 'cart' %}
-{% if cart|length > 0 %}
+{% if cart|length > 0 and cart.total > 0 %}
     {% for productLine in cart.productLines %}
         <p class="item">
         <span class="item-left">
@@ -10,9 +10,9 @@
         </span>
             <span class="item-right">
             <span>{{ productLine.price|number_format(2) }} €</span>
-            <button class="btn btn-sm btn-danger pull-right">
+            <a href="{{ path('cart_remove_line', {'slug': productLine.slug}) }}" class="btn btn-sm btn-danger pull-right">
                 <i class="fa fa-trash fa-sm"></i>
-            </button>
+            </a>
         </span>
         </p>
         {% if not loop.last %}<hr>{% endif %}

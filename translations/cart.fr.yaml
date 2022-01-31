@@ -13,6 +13,8 @@ cart:
     title: Quantité
   total:
     title: Total
+  empty:
+    title: Aucun produit dans le panier !
   error:
     quantity-out-of-bound: Quantité excessive
   checkout: Le périmètre de l'application s'arrête ici. Merci de l'avoir utilisée !
