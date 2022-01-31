@@ -11,24 +11,22 @@
 {% extends 'base.html.twig' %}
 {% trans_default_domain 'error' %}
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <div class="text-cover-wrapper">
-                        <h1 class="text-cover-title c-white">{{ 'error.500'|trans }} {{ status_code }}</h1>
-                        <h3 class="text-cover-subtitle c-white strong-400">{{ status_text }}</h3>
-                        <div class="clearfix"></div>
-                        {% if exception.message %}
-                            <p class="c-white mt-5">
-                                {{ exception.message }}
-                            </p>
-                        {% endif %}
+    <div class="page-wrap d-flex flex-row align-items-center gradient">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center text-white">
+                    <h1>{{ 'error.500'|trans }} {{ status_code }}</h1>
+                    <h3>{{ status_text }}</h3>
+                    {% if exception.message %}
+                        <p class="lead">
+                            {{ exception.message }}
+                        </p>
+                    {% endif %}
 
-                        <div class="text-center mt-5">
-                            <a href="{{ path('product_list') }}" class="btn btn-styled btn-base-5 btn-outline btn-circle">
-                                {{ 'navigation.menu.go-to-home'|trans({}, 'navigation') }}</a>
-                        </div>
+                    <div class="text-center mt-5">
+                        <a href="{{ path('product_list') }}" class="btn btn-primary btn-lg">
+                            {{ 'navigation.menu.go-to-home'|trans({}, 'navigation') }}
+                        </a>
                     </div>
                 </div>
             </div>
